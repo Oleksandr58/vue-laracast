@@ -80,6 +80,7 @@ function bookimedWidget(obj) {
                     lastReviewCoordinate = _this.lastReview.getBoundingClientRect(),
                     offset = lastReviewCoordinate.y + lastReviewCoordinate.height - contentCoordinate.y - contentCoordinate.height;
 
+                    console.log(_this.lastReview);
                 if (offset < _this.lazyLoadOffset) {
                     _this.getReviews();
                 }
@@ -100,7 +101,7 @@ function bookimedWidget(obj) {
             _this.btnMore.forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     var classList = this.classList;
-            console.log(1111);
+    
                     if (~classList.value.indexOf('active')) {
                         classList.remove('active');
                         this.closest('.review').classList.remove('full');
