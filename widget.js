@@ -76,7 +76,7 @@ function bookimedWidget(obj) {
 
         this.initLazyLoad = function() {
             console.log(_this.contentWidget);
-            console.log( _this.lastReview);
+            console.log( this.reviews);
             _this.contentWidget.onscroll = this.debounce(function() {
                 console.log(_this.lastReview);
                 var contentCoordinate = _this.contentWidget.getBoundingClientRect(),
