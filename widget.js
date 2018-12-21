@@ -5,7 +5,7 @@ function bookimedWidget(obj) {
         this.id = obj.id;
         this.blockId = obj.blockId || '.js-bookimed-widget';
         this.maxPage = obj.maxPage || 13;
-        this.mediaPoint = 520;
+        this.mediaPoint = obj.mediaPoint || 520;
         this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
         this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
         this.maxTextHeight= parseInt(this.maxWidth) < this.mediaPoint ? 40 : 60;
