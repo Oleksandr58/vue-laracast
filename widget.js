@@ -92,7 +92,7 @@ function bookimedWidget(obj) {
 
                 if (reviewHeight < _this.maxTextHeight) {
                     var btnReview = review.querySelector('.b-w-more');
-
+console.log(1);
                     if (btnReview) btnReview.remove();
                 }
             });
