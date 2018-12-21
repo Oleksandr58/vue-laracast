@@ -12,8 +12,8 @@ function bookimedWidget(obj) {
         this.headerWidget = this.widget.querySelector('.header');
         this.headerTopWidget = this.headerWidget.querySelector('.top');
         this.headerDownWidget = this.headerWidget.querySelector('.down');
-        this.contentWidget = this.widget.querySelector('.content') || this.widget.querySelector('.content span');
-        this.reviews = this.widget.querySelectorAll('.review');
+        this.contentWidget = this.widget.querySelector('.content');
+        this.reviews = this.widget.querySelectorAll('.review') || this.widget.querySelector('.content span');
         this.btnMore = this.widget.querySelectorAll('div.more');
         this.preloader = this.widget.querySelector('.preloader');
         this.lastReview = this.reviews[this.reviews.length - 1];
