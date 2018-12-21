@@ -58,6 +58,7 @@ function bookimedWidget(obj) {
 
         this.setSize = function() {
             this.widget.setAttribute("style", "max-width:" + this.maxWidth + ";max-height:" + this.maxHeight);
+            if (this.maxWidth < 520) tthis.widget.classList.add('small');
         }
 
         this.addContentMaxHeight = function() {
