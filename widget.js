@@ -43,11 +43,16 @@ function bookimedWidget(obj) {
                             _this.headerDownWidget.parentNode.removeChild(_this.headerDownWidget);
                         }
 
-                        _this.contentWidget.innerHTML += response.reviews;
-                        _this.loadPage++;
-                        _this.reloadReviews();
+                        if (response.reviews) {
+                            _this.contentWidget.innerHTML += response.reviews;
+                            _this.loadPage++;
+                            _this.reloadReviews();
+                            _this.hideDisableMoreBtn();
+                        } else {
+                            _this.maxPage = _this.loadPage;
+                        }
+
                         _this.hidePreloader();
-                        _this.hideDisableMoreBtn();
                         
                     } else {
                         console.error('Request is bad. ' + request.status + ': ' + request.statusText);
