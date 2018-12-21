@@ -18,7 +18,7 @@ function bookimedWidget(obj) {
         this.reviews = this.widget.querySelectorAll('.b-w-review');
         this.btnMore = this.widget.querySelectorAll('div.b-w-more');
         this.preloader = this.widget.querySelector('.b-w-preloader');
-        this.lastReview = this.reviews[this.reviews.length - 1] || this.contentWidget;
+        this.lastReview = this.reviews.length ? this.reviews[this.reviews.length - 1] : this.contentWidget;
         this.loadPage = 1;
         this.isLoaded = true;
 
@@ -75,7 +75,7 @@ function bookimedWidget(obj) {
         this.debounce = function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
 
         this.initLazyLoad = function() {
-            console.log(0, _this.contentWidget);
+            console.log(5, _this.contentWidget);
             console.log(1, _this.reviews);
             _this.contentWidget.onscroll = this.debounce(function() {
                 console.log(2, _this.lastReview);
