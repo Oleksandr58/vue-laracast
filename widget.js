@@ -8,7 +8,7 @@ function bookimedWidget(obj) {
         this.mediaPoint = 520;
         this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
         this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
-        this.maxTextHeight= parseInt(obj.maxWidth) < this.mediaPoint ? 40 : 60;
+        this.maxTextHeight= parseInt(this.maxWidth) < this.mediaPoint ? 40 : 60;
         this.host = obj.host || 'https://bookimed.com/';
         this.lazyLoadOffset = obj.lazyLoadOffset && obj.lazyLoadOffset < 500 ?obj.lazyLoadOffset : 100;
         this.paddingConst = obj.paddingConst || 60;
