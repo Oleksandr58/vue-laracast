@@ -4,7 +4,7 @@ function bookimedWidget(obj) {
     if (obj.id) {
         this.id = obj.id;
         this.blockId = obj.blockId || '.js-bookimed-widget';
-        this.maxPage = obj.maxPage || 3;
+        this.maxPage = obj.maxPage || 13;
         this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
         this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
         this.host = obj.host || 'https://bookimed.com/';
