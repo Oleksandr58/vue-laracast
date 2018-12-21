@@ -100,7 +100,7 @@ function bookimedWidget(obj) {
             _this.btnMore.forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     var classList = this.classList;
-            
+            console.log(1111);
                     if (~classList.value.indexOf('active')) {
                         classList.remove('active');
                         this.closest('.review').classList.remove('full');
