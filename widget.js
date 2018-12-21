@@ -5,6 +5,8 @@ function bookimedWidget(obj) {
         this.id = obj.id;
         this.blockId = obj.blockId || '.js-bookimed-widget';
         this.maxPage = obj.maxPage || 3;
+        this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
+        this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
         this.host = obj.host || 'https://bookimed.com/';
         this.lazyLoadOffset = obj.lazyLoadOffset && obj.lazyLoadOffset < 500 ?obj.lazyLoadOffset : 100;
         this.paddingConst = obj.paddingConst || 60;
@@ -53,6 +55,10 @@ function bookimedWidget(obj) {
                 request.send();
             }
         };
+
+        this.setSize = function() {
+            this.widget.setAttribute("style", "max-width:" + this.maxWidth + ";max-height:" + this.maxWidth);
+        }
 
         this.addContentMaxHeight = function() {
             var maxHeight = this.widget.getBoundingClientRect().height - this.paddingConst - this.headerWidget.getBoundingClientRect().height;
@@ -105,6 +111,7 @@ function bookimedWidget(obj) {
             });
         }
 
+        this.setSize();
         this.initShowHideBtn();
         this.initLazyLoad();
         this.addContentMaxHeight();
