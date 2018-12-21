@@ -39,7 +39,7 @@ function bookimedWidget(obj) {
                             _this.headerDownWidget.parentNode.removeChild(_this.headerDownWidget);
                         }
                         console.log(response.reviews);
-                        _this.contentWidget.innedHTML += response.reviews;
+                        _this.contentWidget.innerHTML += response.reviews;
                         _this.loadPage++;
                         _this.reloadReviews();
                         _this.hidePreloader();
