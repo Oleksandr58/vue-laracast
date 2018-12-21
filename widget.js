@@ -81,6 +81,7 @@ function bookimedWidget(obj) {
             this.reviews = this.widget.querySelectorAll('.review');
             this.lastReview = this.reviews[this.reviews.length - 1];
             this.initShowHideBtn();
+            console.log(44, this.reviews);
             this.hideDisableMoreBtn();
         }
 
