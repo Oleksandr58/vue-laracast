@@ -69,6 +69,7 @@ function bookimedWidget(obj) {
         this.reloadReviews = function() {
             this.reviews = this.widget.querySelectorAll('.review');
             this.lastReview = this.reviews[this.reviews.length - 1];
+            this.initShowHideBtn();
         }
 
         this.debounce = function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
@@ -97,7 +98,7 @@ function bookimedWidget(obj) {
 
         this.initShowHideBtn = function() {
             _this.btnMore.forEach(function(elem) {
-                elem.addEventListener('click', function() {
+                elem.removeEventListener('click').addEventListener('click', function() {
                     var classList = this.classList;
             
                     if (~classList.value.indexOf('active')) {
