@@ -32,13 +32,13 @@ function bookimedWidget(obj) {
                     if (request.status >= 200 && request.status < 400) {
                         var response = JSON.parse(request.responseText);
     
-                        console.log(response.header);
                         if (response.header) {
+                            _this.headerTopWidget.innerHTML = response.header;
                             _this.headerTopWidget.insertAdjacentHTML('afterend', response.header);
                             _this.headerTopWidget.parentNode.removeChild(_this.headerTopWidget);
                             _this.headerDownWidget.parentNode.removeChild(_this.headerDownWidget);
                         }
-                        console.log(response.reviews);
+
                         _this.contentWidget.innerHTML += response.reviews;
                         _this.loadPage++;
                         _this.reloadReviews();
