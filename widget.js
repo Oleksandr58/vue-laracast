@@ -30,7 +30,7 @@ function bookimedWidget(obj) {
 
                 request.onload = function() {
                     if (request.status >= 200 && request.status < 400) {
-                        var response = request.responseText;
+                        var response = JSON.parse(request.responseText);
     
                         if (response.header) {
                             _this.headerTopWidget.insertAdjacentHTML('afterend', response.header);
