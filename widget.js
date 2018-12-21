@@ -87,6 +87,7 @@ function bookimedWidget(obj) {
         this.hideDisableMoreBtn = function() {
             this.reviews.forEach(function(review) {
                 var reviewHeight = review.querySelector('.b-w-text').getBoundingClientRect().height;
+                console.log(parseInt(this.maxWidth), ':', this.mediaPoint);
                 console.log('222review', review, 'maxh', this.maxTextHeight, 'height:', reviewHeight < this.maxTextHeight);
                 if (reviewHeight < this.maxTextHeight) {
                     console.log('yeah');
