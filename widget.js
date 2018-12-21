@@ -5,8 +5,10 @@ function bookimedWidget(obj) {
         this.id = obj.id;
         this.blockId = obj.blockId || '.js-bookimed-widget';
         this.maxPage = obj.maxPage || 13;
+        this.mediaPoint = 520;
         this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
         this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
+        this.maxTextHeight= parseInt(obj.maxWidth) < this.mediaPoint ? 40 : 60;
         this.host = obj.host || 'https://bookimed.com/';
         this.lazyLoadOffset = obj.lazyLoadOffset && obj.lazyLoadOffset < 500 ?obj.lazyLoadOffset : 100;
         this.paddingConst = obj.paddingConst || 60;
@@ -45,6 +47,7 @@ function bookimedWidget(obj) {
                         _this.loadPage++;
                         _this.reloadReviews();
                         _this.hidePreloader();
+                        _this.hideDisableMoreBtn();
                         
                     } else {
                         console.error('Request is bad. ' + request.status + ': ' + request.statusText);
@@ -59,7 +62,7 @@ function bookimedWidget(obj) {
         this.setSize = function() {
             this.widget.setAttribute("style", "max-width:" + this.maxWidth + ";max-height:" + this.maxHeight);
 
-            if (parseInt(this.maxWidth) < 520) {
+            if (parseInt(this.maxWidth) < this.mediaPoint) {
                 this.widget.classList.add('small');
             }
         }
@@ -74,6 +77,14 @@ function bookimedWidget(obj) {
             this.reviews = this.widget.querySelectorAll('.review');
             this.lastReview = this.reviews[this.reviews.length - 1];
             this.initShowHideBtn();
+        }
+
+        this.hideDisableMoreBtn = function() {
+            this.reviews.forEach(function(review) {
+                var reviewHeight = review.querySelector('.b-w-text').getBoundingClientRect().height;
+                console.log('review', review, 'height:', reviewHeight);
+                // if (
+            });
         }
 
         this.debounce = function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
