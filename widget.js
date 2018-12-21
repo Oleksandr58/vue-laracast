@@ -85,6 +85,7 @@ function bookimedWidget(obj) {
         }
 
         this.hideDisableMoreBtn = function() {
+            console.log(1111);
             console.log(this.reviews);
             this.reviews.forEach(function(review) {
                 console.log(2222);
