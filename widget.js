@@ -47,6 +47,7 @@ function bookimedWidget(obj) {
                             _this.contentWidget.innerHTML += response.reviews;
                             _this.loadPage++;
                             _this.reloadReviews();
+                            _this.hideDisableMoreBtn();
                         } else {
                             _this.maxPage = _this.loadPage;
                         }
@@ -78,18 +79,13 @@ function bookimedWidget(obj) {
         }
 
         this.reloadReviews = function() {
-            this.reviews = this.widget.querySelectorAll('.review');
+            this.reviews = this.widget.querySelectorAll('.b-w-review');
             this.lastReview = this.reviews[this.reviews.length - 1];
             this.initShowHideBtn();
-            console.log(44, this.reviews);
-            this.hideDisableMoreBtn();
         }
 
         this.hideDisableMoreBtn = function() {
-            console.log(1111);
-            console.log(this.reviews);
             this.reviews.forEach(function(review) {
-                console.log(2222);
                 var reviewHeight = review.querySelector('.b-w-text').getBoundingClientRect().height;
                 console.log('review', review, 'height:', reviewHeight);
                 // if (
