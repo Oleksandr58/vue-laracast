@@ -98,17 +98,17 @@ function bookimedWidget(obj) {
 
         this.initShowHideBtn = function() {
             this.btnMore = this.widget.querySelectorAll('div.b-w-more');
-            console.log(1, _this.btnMore);
+            
             _this.btnMore.forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     var classList = this.classList;
     
                     if (~classList.value.indexOf('active')) {
                         classList.remove('active');
-                        this.closest('.review').classList.remove('full');
+                        this.closest('.b-w-review').classList.remove('full');
                     } else {
                         classList.add('active');
-                        this.closest('.review').classList.add('full');
+                        this.closest('.b-w-review').classList.add('full');
                     }
                 });
             });
