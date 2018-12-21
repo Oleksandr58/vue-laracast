@@ -88,7 +88,7 @@ function bookimedWidget(obj) {
             this.reviews.forEach(function(review) {
                 var reviewHeight = review.querySelector('.b-w-text').getBoundingClientRect().height;
                 console.log('review', review, 'height:', reviewHeight);
-                // if (
+                if (reviewHeight < this.maxTextHeight) review).querySelector('.b-w-text').removeChild();
             });
         }
 
