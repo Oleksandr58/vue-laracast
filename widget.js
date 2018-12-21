@@ -47,7 +47,6 @@ function bookimedWidget(obj) {
                             _this.contentWidget.innerHTML += response.reviews;
                             _this.loadPage++;
                             _this.reloadReviews();
-                            _this.hideDisableMoreBtn();
                         } else {
                             _this.maxPage = _this.loadPage;
                         }
@@ -82,6 +81,7 @@ function bookimedWidget(obj) {
             this.reviews = this.widget.querySelectorAll('.review');
             this.lastReview = this.reviews[this.reviews.length - 1];
             this.initShowHideBtn();
+            this.hideDisableMoreBtn();
         }
 
         this.hideDisableMoreBtn = function() {
