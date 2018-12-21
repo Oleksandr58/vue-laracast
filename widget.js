@@ -57,7 +57,7 @@ function bookimedWidget(obj) {
         };
 
         this.setSize = function() {
-            this.widget.setAttribute("style", "max-width:" + this.maxWidth + ";max-height:" + this.maxWidth);
+            this.widget.setAttribute("style", "max-width:" + this.maxWidth + ";max-height:" + this.maxHeight);
         }
 
         this.addContentMaxHeight = function() {
@@ -98,7 +98,7 @@ function bookimedWidget(obj) {
 
         this.initShowHideBtn = function() {
             this.btnMore = this.widget.querySelectorAll('div.b-w-more');
-            
+
             _this.btnMore.forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     var classList = this.classList;
