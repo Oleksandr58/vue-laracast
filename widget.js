@@ -8,7 +8,7 @@ function bookimedWidget(obj) {
         this.mediaPoint = obj.mediaPoint || 520;
         this.maxWidth= obj.maxWidth ? obj.maxWidth + 'px' : 'none';
         this.maxHeight= obj.maxHeight ? obj.maxHeight + 'px' : 'none';
-        this.maxTextHeight= parseInt(this.maxWidth) < this.mediaPoint ? 40 : 60;
+        this.maxTextHeight= parseInt(this.maxWidth) < this.mediaPoint ? 60 : 40;
         this.host = obj.host || 'https://bookimed.com/';
         this.lazyLoadOffset = obj.lazyLoadOffset && obj.lazyLoadOffset < 500 ?obj.lazyLoadOffset : 100;
         this.paddingConst = obj.paddingConst || 60;
@@ -89,10 +89,8 @@ function bookimedWidget(obj) {
 
             this.reviews.forEach(function(review) {
                 var reviewHeight = review.querySelector('.b-w-text').getBoundingClientRect().height;
-                console.log(1, parseInt(_this.maxWidth), 2,  _this.mediaPoint, 3, parseInt(_this.maxWidth) < _this.mediaPoint);
-console.log(reviewHeight, ':', _this.maxTextHeight);
+                
                 if (reviewHeight < _this.maxTextHeight) {
-                    console.log('review:', review.querySelector('.b-w-more'));
                     review.querySelector('.b-w-more').remove();
                 }
             });
