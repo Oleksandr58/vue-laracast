@@ -75,10 +75,10 @@ function bookimedWidget(obj) {
         this.debounce = function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
 
         this.initLazyLoad = function() {
-            console.log(_this.contentWidget);
-            console.log( this.reviews);
+            console.log(0, _this.contentWidget);
+            console.log(1, _this.reviews);
             _this.contentWidget.onscroll = this.debounce(function() {
-                console.log(_this.lastReview);
+                console.log(2, _this.lastReview);
                 var contentCoordinate = _this.contentWidget.getBoundingClientRect(),
                     lastReviewCoordinate = _this.lastReview.getBoundingClientRect(),
                     offset = lastReviewCoordinate.y + lastReviewCoordinate.height - contentCoordinate.y - contentCoordinate.height;
