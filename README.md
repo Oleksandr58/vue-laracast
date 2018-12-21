@@ -1,1 +1,1 @@
-# vue-laracast
+[vue-laracast](https://oleksandr58.github.io/vue-laracast/.)
