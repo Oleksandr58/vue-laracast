@@ -97,6 +97,7 @@ function bookimedWidget(obj) {
         }
 
         this.initShowHideBtn = function() {
+            console.log(_this.btnMore);
             _this.btnMore.forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     var classList = this.classList;
